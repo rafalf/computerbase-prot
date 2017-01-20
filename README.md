@@ -3,10 +3,8 @@
 * ```webdriver-manager update```
 
 ### Install reporting ( local installation ):
-* cd ./confs/ and npm install command from the links below:
-( if link no. 1 aint working fine for you, use the command from no. 2)
+* cd ./confs/ and npm install command from the link below:
 [1 - html reporter](https://www.npmjs.com/package/protractor-jasmine2-html-reporter)
-[2 - html reporter](https://www.npmjs.com/package/protractor-jasmine2-screenshot-reporter/tutorial)
 
 ## Run:
 * drop the required *.jsons in: __utils__ folder
