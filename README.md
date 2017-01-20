@@ -1,4 +1,22 @@
-### Jasmine matchers
+### Install protractor [1](http://www.protractortest.org/#/)
+* ```npm install -g protractor```
+* ```webdriver-manager update```
+
+### Install reporting ( local installation ):
+* cd ./confs/ and npm install command from the link below:
+[1 - html reporter](https://www.npmjs.com/package/protractor-jasmine2-html-reporter)
+
+## Run:
+* drop the required *.jsons in: __utils__ folder
+* run ```cmd``` and start webdriver: ```webdriver-manager start``` and leave the server running
+* again run ```cmd``` --> ```cd ./confs/```
+* run ```protractor conf.js```
+
+When tests are finished, it'll generate a html report for you.
+If there are any failures, the page screenhots are saved.
+
+
+### Cheatsheet - Jasmine matchers
 
 ```
 describe('jasmine matchers', function() {
