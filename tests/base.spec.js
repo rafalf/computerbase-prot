@@ -28,6 +28,7 @@ describe('back base test', function() {
 
         add.waitForPage();
 
+        // generate random number and send as a computer name
         var compName = add.getComputerNameInput();
         var computerName = add.getRandomNum(1, 100000) + 'COM';
         compName.sendKeys(computerName);
@@ -40,6 +41,7 @@ describe('back base test', function() {
 
         expect(headingAfter).toContain('computers found')
 
+        // computers count increased
         expect(headingAfter).not.toBe(headingBefore)
 
     });
@@ -58,6 +60,7 @@ describe('back base test', function() {
 
         add.getCreatThisComputerButton().click();
 
+        // computer name is required
         expect(add.getErrorText()).toBe('Required');
 
     });
@@ -114,6 +117,7 @@ describe('back base test', function() {
 
         add.getSelectCompany('Apple Inc.').click();
 
+        // click on cancel
         add.getCancelButton().click();
 
         main.waitForPage();
@@ -122,6 +126,7 @@ describe('back base test', function() {
 
         expect(headingAfter).toContain('computers found')
 
+        // computer count remains unchanged
         expect(headingAfter).toBe(headingBefore)
 
     });
@@ -172,12 +177,12 @@ describe('back base test', function() {
 
         var headingAfter = main.getComputerH1Header();
 
+        // edit computer page
         expect(headingAfter).toContain('Edit computer')
 
+        // verify computer data
         expect(add.getComputerNameInput().getAttribute('value')).toEqual(c)
-
         expect(add.getIntroducedInput().getAttribute('value')).toEqual('1960-01-01')
-
         expect(add.getDiscontinuedInput().getAttribute('value')).toEqual('')
 
     });
@@ -281,8 +286,8 @@ describe('back base test', function() {
         // count increased
         expect(headingAfter).not.toBe(headingBefore)
 
+        // search by Name
         main.getSearchBox().sendKeys('deleteMe');
-
         main.getFilterButton().click();
 
         main.clickComputerByName('deleteMe');
@@ -311,6 +316,7 @@ describe('back base test', function() {
 
         main.getFilterButton().click();
 
+        // no results
         expect(main.getNoResults()).toBe('Nothing to display');
 
     });
