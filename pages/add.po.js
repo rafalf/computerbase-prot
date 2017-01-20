@@ -18,6 +18,10 @@ var AddPage = function (){
         return err.getText();
     };
 
+    this.getAllErrors = function(){
+        return $$('.error')
+    };
+
     this.getIntroducedInput = function(){
         return $('#introduced');
     };
@@ -28,6 +32,14 @@ var AddPage = function (){
 
     this.getCreatThisComputerButton = function(){
         return $('[value="Create this computer"]');
+    };
+
+    this.getSaveComputerButton = function(){
+        return $('[value="Save this computer"]');
+    };
+
+    this.getDeleteComputerButton = function(){
+        return $('[value="Delete this computer"]');
     };
 
     this.getCancelButton = function(){

@@ -18,13 +18,37 @@ var MainPage = function (){
         return $('#searchbox');
     };
 
+    this.getSearchBox = function(){
+        return $('#searchbox');
+    };
+
     this.getFilterButton =  function(){
         return $("#searchsubmit");
     };
 
+    this.getNoResults =  function(){
+        return $(".well em").getText();
+    };
+
+
     this.getAddNewComputer  = function () {
         return $('#add')
     };
+
+    this.getComputersByName  = function () {
+        var comps = $$('tbody tr>td:nth-of-type(1)>a')
+        comps.each(function (element, index) {
+            element.getText().then(function (text) {
+                console.log(index, text)
+            });
+        });
+    };
+
+    this.clickComputerByName  = function (c) {
+        var comp = element(by.cssContainingText('td>a', c));
+        comp.click();
+    };
+
 
 };
 
